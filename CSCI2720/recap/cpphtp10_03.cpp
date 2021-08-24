@@ -49,3 +49,8 @@ int main() {
 }
 
  
+ /*
+  TODO: will ask this in an exam. 
+  (for i=0; i<10; i++);
+ cout <<i ; (it will be nine, this will run 10 times
+ */
