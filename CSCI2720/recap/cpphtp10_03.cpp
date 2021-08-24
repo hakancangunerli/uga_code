@@ -11,11 +11,7 @@ using namespace std;
 */ 
 
 // class definition needs a ; at the end. 
-
-
 //  A constructor in C++ is a special method that is automatically called when an object of a class is created.
-
- 
 // example from w3schools,
 
 
@@ -29,6 +25,17 @@ class Car {        // The class
     int year;      // Attribute
     Car(string x, string y, int z); // Constructor declaration
 };
+// slide 8, if public is not mentioned, it's data members are private. 
+// TODO: check this one. 
+
+// slide 9:
+// TODO: check data members
+// methods you keep public, data members you keep private. 
+// #include <string> -> is a class, needs to be imported. 
+// if you then do this, you need to add using namespace std, or you'd have to do std::string 
+
+// <> means a system file "" -> local file. 
+
 
 // Constructor definition outside the class
 Car::Car(string x, string y, int z) {
@@ -54,3 +61,24 @@ int main() {
   (for i=0; i<10; i++);
  cout <<i ; (it will be nine, this will run 10 times
  */
+
+// TODO: will ask in an exam p27 "account.h" -> const means method cannot update the object. the method cannot change the data member. 
+// cannot change the data member (its value etc. )
+
+
+// page 53 explicit Account(std::string) : name{AccountName} -> list initialization 
+
+// class Student{
+//   Student(int id ){
+//     StudentID= id; 
+//   }
+// private:
+//   int StudentID;
+//   }
+
+//   main() {
+//     Student S1{5};
+    // Student S2{'e'}; -> this will work but it's gonna be in ascii 
+//   }
+   // in order to prevent this, you can use the explicit keyword.
+ // if there is more than one arguments, you can't use the explicit keyword to prevent the issue. 

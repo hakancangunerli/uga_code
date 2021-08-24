@@ -1,3 +1,5 @@
+// you only need to know what's on the slides. 
+
 // this is the declaration of the header file Time.h 
 /* 
 
