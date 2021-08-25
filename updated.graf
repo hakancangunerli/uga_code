@@ -85,13 +85,3 @@ F={q1}
 
 }
 4. Use words to describe the logical steps of your machine.
-Our \Sigma (or our input alphabet) is 0 and 1, since it's a binary string.
-Our transition functions are described within the description.
-
-We first begin with our initial state of q_0, the machine then starts from q_1 (*{without caring whether the input is 0 or 1}). We then transition to q_2 where we have received our **{1st character }. We continue within the path to transition to q_2 **{2nd character } , we finally then go to our final state, q_1 to complete our DFA where the strings are a  multiple of three. This loop could be continued and **{our third character}  could be achieved. If there's more input than 3 characters, the state diagram allows a loop for multiples of three to be achieved.
-
-Our transition functions look like this:
-
-\d(q_1,0)=q_2 or \d(q_1,1)=q_2
-\d(q_2,0)=q_3 or \d(q_2,1)=q_3
-\d(q_3,0)=q_1 or \d(q_3,1)=q_1
