@@ -4,7 +4,8 @@
 /* 
 
 this is to prevent multiple inclusions of the same header file 
-#ifndef TIME_H
+main shouldn't see the implementation, only the prototype . 
+#ifndef TIME_H -> if not defined, use the definition.
 #define TIME_H
 
 class Time{
@@ -33,7 +34,7 @@ class Time{
 #include "Time.h"
 using namespace std;
 
-Time::Time(){
+Time::Time(){ -> constructor that belongs to the class Time. all methods will have a prefix similar to it.
     hour = minute = second = 0;
 } // this is the time constructor
 
@@ -82,3 +83,50 @@ int main(){
 
  ~ -> is a destructor, opposite to a constructor. 
 */ 
+
+/* 
+for( i =0; i < 10; i++);
+cout << i; 
+
+this will run 10 times.
+
+*/
+
+// passed by reference, objects are usually much larger in size than primitive types. you won't be making a copy of the reference. but that means the method can change the value of the reference, and to prevent that you make it a const.  9.2.13 
+
+// only the data members contribute to the size of the object. depends only on the data members. 
+
+/*
+class Student{
+    int method1(int,char);
+    void method2(char);
+    void method3(float);
+private:
+int x; 
+char c; 
+}
+
+main{
+    Student s1;
+}
+*/ 
+// this will be 5 bytes coming from private members. 
+
+/* 
+if you don't wanna do a makefile
+gcc -c Time.cpp 
+gcc -c main.cpp 
+gcc -o main.o Time.o 
+*/ 
+
+
+// explicit can be used once again but if you were to give it default values. 
+// ~ -> destructor to release memory. all assignments will include a destructor. check 9.7, figure 9.8
+
+// you cannot call a nonconstant method in your constant method. check figure 9.17 he won't ask it but it's good to remember the concept. 
+// class concept, use the Time.h class as an example. 9.1 and 9.2 (template)
+
+// command-line argument 
+
+// figure 17.7 filei/o  this is the easiest way to do it. 
+

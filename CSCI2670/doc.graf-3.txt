@@ -1,0 +1,91 @@
+__> CSCI 2670, Fall 2021 (morning)
+
+
+Group: CJ, Tom
+
+___ Instructions
+|> Create a Grafstate document with your answers to the following problems.  Save your work as a Grafstate file with the extension **{.graf.txt} and upload it to eLC.
+|> You may work in small groups.  List in your document *{all} of the students in your group.
+
+___ Exercises
+1. Give a recursive definition to define the length of a string over an alphabet \S.
+
+
+**{Base case is:}
+**{\epsilon is an element of Sigma.}
+
+**{Recursive step:}
+
+**{Let a be an element of \S.  ( a \in \S) . \S being the character for is the alphabet.}
+**{Let c be in \S as well . Then a*c would be in \S .}
+
+
+2. Consider the following DFA:
+
+:+ dfa M
+{
+Q={q1,q2,q3,q4}
+S={a,b}
+q0=q1
+d(q1,a)=q3
+d(q1,b)=q4
+d(q2,a)=q1
+d(q2,b)=q2
+d(q3,a)=q3
+d(q3,b)=q4
+d(q4,a)=q1
+d(q4,b)=q2
+F={q2,q4}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+Write the \graf code for a DFA that recognizes the complement of L(M).
+
+:+ dfa dfa1
+{
+Q={q1,q2,q3,q4}
+S={a,b}
+q0=q1
+d(q1,a)=q3
+d(q1,b)=q4
+d(q2,a)=q1
+d(q2,b)=q2
+d(q3,a)=q3
+d(q3,b)=q4
+d(q4,a)=q1
+d(q4,b)=q2
+F={q1,q3}
+
+
+
+
+
+
+
+
+
+
+}
+
+3. Give three examples of strings that are accepted by M and rejected by your machine.
+**{(ab, abb, abbb)}
+3. Give three examples of strings that are rejected by M and accepted by your machine.
+**{ (\epsilon, a,aa)}
+4. Explain why your machine works.
+
+**{(The newly constructed complement M' is the complement language of the initial DFA, M. They , however, use the same alphabet. The answers rejected by the initial definition of dfa M are accepted the by the complement of M, M'.)}
