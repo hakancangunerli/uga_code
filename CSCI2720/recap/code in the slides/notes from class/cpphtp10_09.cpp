@@ -129,4 +129,24 @@ gcc -o main.o Time.o
 // command-line argument 
 
 // figure 17.7 filei/o  this is the easiest way to do it. 
+// clients.dat is the name of the file 
+// ifstream is from fstream
+
+// if inClientfile cannot open the file, it'd look at the same directory, and i'd be null if the file doesn't exist. 
+// (you should do the error check) if (!inClientfile) thingy 
+// you don't need a delimiter, you can do what line 32 does while(inClientfile >> account >> name >> balance)
+// it's like cin but it reads variable by variable
+
+
+/*
+215 John Doe 357 
+int account 
+string name
+double balance 
+string lastname
+
+if you were to implement something like this, the the space will be skipped thus you'd have to get the lastname separately
+
+*/ 
+// there should be a method called .open in ifstream.
 
