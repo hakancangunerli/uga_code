@@ -1,0 +1,151 @@
+:doc title _> CSCI 2670 - Classwork 3
+___ Instructions
+|> Create a Grafstate document with your answers to the following problems.  Save your work as a Grafstate file with the extension **{.graf.txt} and upload it to eLC.
+|> You may work in small groups.  List in your document *{all} of the students in your group.
+
+
+
+Group : Tommy and CJ
+___ Exercises
+> Consider the following DFAs M_1 and M_2:
+:+ dfa M1
+{
+Q={q1,q2}
+S={0,1}
+d(q1,0)=q1
+d(q1,1)=q2
+d(q2,0)=q1
+d(q2,1)=q2
+q0=q1
+F={q1}
+
+
+
+
+
+
+
+
+
+}
+
+:+ dfa M2
+{
+Q={r1,r2,r3,r4}
+S={0,1}
+d(r1,0)=r2
+d(r1,1)=r2
+d(r2,0)=r3
+d(r2,1)=r3
+d(r3,0)=r4
+d(r3,1)=r4
+d(r4,0)=r4
+d(r4,1)=r4
+q0=r1
+F={r3}
+
+
+
+
+
+
+
+
+
+}
+
+1. Describe the @lang recognized by M_1.  You may give your description in words or in set builder notation.
+
+**{Binary strings that end with zeros}
+
+2. Describe the @lang recognized by M_2.
+
+**{Binary strings with lengths of 2.}
+
+3. Use the algorithm from class to write \graf code for a DFA M that recognizes the @lang L(M_1)\uL(M_2).
+
+
+** {The cartesian product of states in M1 and M2 are {(q1,r1),(q1,r2),(q1,r3),(q1,r4),(q2,r1),(q2,r2),(q2,r3),(q2,r4)} }
+
+:+ dfa M3
+{
+Q={q1r1,q1r2,q1r3,q1r4,q2r1,q2r2,q2r3,q2r4}
+S={0,1}
+d(q1r1,0)=q1r2
+d(q1r1,1)=q2r2
+d(q1r2,0)=q1r3
+d(q1r2,1)=q2r3
+d(q1r3,0)=q1r4
+d(q1r3,1)=q2r4
+d(q1r4,0)=q1r4
+d(q1r4,1)=q2r4
+d(q2r1,0)=q1r2
+d(q2r1,1)=q2r2
+d(q2r2,0)=q1r3
+d(q2r2,1)=q2r3
+d(q2r3,0)=q1r4
+d(q2r3,1)=q2r4
+d(q2r4,0)=q1r4
+d(q2r4,1)=q2r4
+
+q0=q1r1
+F={q1r3,q1r1, q1r2,q1r4,q2r3}
+
+
+
+
+
+
+
+}
+
+
+
+4. Describe the @lang recognized by the DFA from problem 3.
+
+**{all binary strings that end up with 0 or have lengths of 2}
+
+5. Does your machine have any states that are not necessary? If so, then identify them.
+
+
+**{q2r1 is unnecessary because it's not possible to either start or end up in that state.}
+
+6. Considering the logical purpose of the states used in problem 3, explain why the states identified in problem 5 are not necessary and why the Union algorithm produced them.
+
+**{all the other states are either belong in F or have transitions to them. this is the only state that you cannot transition to.}
+
+
+7. Modify your \graf code from problem 3 to produce an equivalent DFA that does not have any useless states.
+
+:+ dfa M4
+{
+Q={q1r1,q1r2,q1r3,q1r4,q2r2,q2r3,q2r4}
+S={0,1}
+d(q1r1,0)=q1r2
+d(q1r1,1)=q2r2
+d(q1r2,0)=q1r3
+d(q1r2,1)=q2r3
+d(q1r3,0)=q1r4
+d(q1r3,1)=q2r4
+d(q1r4,0)=q1r4
+d(q1r4,1)=q2r4
+d(q2r2,0)=q1r3
+d(q2r2,1)=q2r3
+d(q2r3,0)=q1r4
+d(q2r3,1)=q2r4
+d(q2r4,0)=q1r4
+d(q2r4,1)=q2r4
+
+q0=q1r1
+F={q1r3,q1r1, q1r2,q1r4,q2r3}
+
+
+
+
+
+
+
+}
+
+
+:comment Two DFAs M_1 and M_2 are said yo be **{equivalent} (written M_1~=M_2) if L(M_1)=L(M_2).
