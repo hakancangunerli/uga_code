@@ -1,0 +1,32 @@
+Name: Ethan Mok (811-383-355)
+Email: ewm92737@uga.edu
+
+My code can be compiled with the command
+    $ make compile
+
+and run with the command
+    $ make run
+
+    or
+
+    $ ./main [instructors.txt] [students.txt]
+
+
+Additional Changes to the project:
+I modifed the login method to include a parameter for the
+input text file so that the login method could read the
+text file that was inputted into the command line arguement
+
+I modifed all the methods that returned a Student object in
+the Instructor class to return a pointer to a Student object.
+I just happen to find that the syntax of reading pointers to
+objects easier for myself
+    
+I also placed all the data that was read from the text file into
+a 2D array that I could pass around to my Instructor and Student
+objects, so many methods in the Instructor class include and extra
+2D array parameter that made it easier for me to access data
+
+Finally, I also modifed most methods to include a size or row
+parameter. This allows for differing size text files to be read
+rather than just hard coding the number 20 into my program. 

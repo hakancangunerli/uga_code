@@ -1,0 +1,21 @@
+Cho_assignment4:
+total 4
+drwxr-xr-x 2 ugrad 4096 Nov  4 20:48 BinarySearchTree
+-rw-r--r-- 1 ugrad    0 Nov  4 20:51 rec46874
+
+Cho_assignment4/BinarySearchTree:
+total 84
+-rw-r--r-- 1 ugrad  3594 Nov  4 20:32 BinaryTree.cpp
+-rw-r--r-- 1 ugrad   873 Nov  4 20:32 BinaryTree.h
+-rw-r--r-- 1 ugrad  8608 Nov  4 20:48 BinaryTree.o
+-rw-r--r-- 1 ugrad    29 Nov  4 15:37 input.txt
+-rw-r--r-- 1 ugrad   504 Nov  4 15:42 ItemType.cpp
+-rw-r--r-- 1 ugrad   306 Nov  4 20:32 ItemType.h
+-rw-r--r-- 1 ugrad  1688 Nov  4 20:48 ItemType.o
+-rwxr-xr-x 1 ugrad 17506 Nov  4 20:48 main
+-rw-r--r-- 1 ugrad  3082 Nov  4 20:32 Main.cpp
+-rw-r--r-- 1 ugrad  9032 Nov  4 20:48 Main.o
+-rw-r--r-- 1 ugrad   342 Nov  4 15:40 makefile
+-rw-r--r-- 1 ugrad   136 Nov  4 20:32 Node.h
+-rw-r--r-- 1 ugrad   225 Nov  4 15:36 Readme.txt
+/home/ugrads/seong/cs2720/Cho_assignment4:/home/work/cs2720b

@@ -1,0 +1,14 @@
+Cho_assignment2:
+total 1876
+-rw-r--r-- 1 ugrad      29 Sep 29 13:21 input.txt
+-rw-r--r-- 1 ugrad 1876368 Sep 28 21:44 ItemType
+-rw-r--r-- 1 ugrad     504 Sep 29 20:29 ItemType.cpp
+-rw-r--r-- 1 ugrad     281 Sep 28 21:43 ItemType.h
+-rw-r--r-- 1 ugrad     160 Sep 28 22:05 ListNode.h
+-rw-r--r-- 1 ugrad    4457 Sep 30 04:04 main.cpp
+-rw-r--r-- 1 ugrad     379 Sep 29 23:05 Makefile
+-rw-r--r-- 1 ugrad     225 Sep 30 04:09 Readme.txt
+-rw-r--r-- 1 ugrad       0 Sep 30 04:11 rec5171
+-rw-r--r-- 1 ugrad    3366 Sep 30 04:02 SortedLinkedList.cpp
+-rw-r--r-- 1 ugrad     474 Sep 30 03:35 SortedLinkedList.h
+/home/ugrads/seong/cs2720/Cho_assignment2:/home/work/cs2720b

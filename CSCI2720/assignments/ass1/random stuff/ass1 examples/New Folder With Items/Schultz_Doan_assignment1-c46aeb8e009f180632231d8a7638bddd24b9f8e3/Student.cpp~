@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+#include "Student.h"
+
+using namespace std;
+
+Student::Student() {
+    
+}
+
+bool Student::login(string username, string password) {
+    string line;
+
+    ifstream studentFile("students.txt");
+
+    if(studentFile.is_open()) {
+	while(getline(studentFile, line))
+	    cout << line << "\n";
+
+	studentFile.close();
+    }
+
+    else
+	cout << "Error opening students.txt" << endl;
+
+    return true;
+}

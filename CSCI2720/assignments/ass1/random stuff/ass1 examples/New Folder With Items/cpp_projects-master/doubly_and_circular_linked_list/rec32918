@@ -1,0 +1,53 @@
+Cho_assignment3:
+total 16
+drwxr-xr-x 2 ugrad 4096 Oct 17 15:46 Bonus
+drwxr-xr-x 2 ugrad 4096 Oct 17 09:16 CircularLinkedList
+drwxr-xr-x 2 ugrad 4096 Oct 17 15:50 DoublyLinkedList
+-rw-r--r-- 1 ugrad  225 Oct 16 17:17 Readme.txt
+-rw-r--r-- 1 ugrad    0 Oct 17 15:52 rec32918
+
+Cho_assignment3/Bonus:
+total 68
+-rw-r--r-- 1 ugrad  3682 Oct 17 14:08 DoublyLinkedList.cpp
+-rw-r--r-- 1 ugrad   438 Oct 17 09:46 DoublyLinkedList.h
+-rw-r--r-- 1 ugrad  6696 Oct 17 14:08 DoublyLinkedList.o
+-rw-r--r-- 1 ugrad    29 Oct 15 13:27 input.txt
+-rw-r--r-- 1 ugrad   504 Oct 16 10:02 ItemType.cpp
+-rw-r--r-- 1 ugrad   306 Oct 16 10:01 ItemType.h
+-rw-r--r-- 1 ugrad  1688 Oct 17 09:16 ItemType.o
+-rwxr-xr-x 1 ugrad 15952 Oct 17 15:46 main
+-rw-r--r-- 1 ugrad  1653 Oct 17 15:46 Main.cpp
+-rw-r--r-- 1 ugrad  6496 Oct 17 15:46 Main.o
+-rw-r--r-- 1 ugrad   378 Oct 16 19:06 Makefile
+-rw-r--r-- 1 ugrad   156 Oct 17 09:18 NodeType.h
+
+Cho_assignment3/CircularLinkedList:
+total 68
+-rw-r--r-- 1 ugrad  3927 Oct 16 18:51 CircularLinkedList.cpp
+-rw-r--r-- 1 ugrad   449 Oct 16 14:53 CircularLinkedList.h
+-rw-r--r-- 1 ugrad  6616 Oct 17 09:16 CircularLinkedList.o
+-rw-r--r-- 1 ugrad    29 Oct 15 13:27 input.txt
+-rw-r--r-- 1 ugrad   504 Oct 16 10:04 ItemType.cpp
+-rw-r--r-- 1 ugrad   306 Oct 16 10:00 ItemType.h
+-rw-r--r-- 1 ugrad  1688 Oct 16 17:15 ItemType.o
+-rwxr-xr-x 1 ugrad 15974 Oct 17 09:16 main
+-rw-r--r-- 1 ugrad  1615 Oct 16 15:22 Main.cpp
+-rw-r--r-- 1 ugrad  6328 Oct 16 17:15 Main.o
+-rw-r--r-- 1 ugrad   390 Oct 16 10:50 Makefile
+-rw-r--r-- 1 ugrad   136 Oct 16 10:16 NodeType.h
+
+Cho_assignment3/DoublyLinkedList:
+total 68
+-rw-r--r-- 1 ugrad  3820 Oct 17 15:50 DoublyLinkedList.cpp
+-rw-r--r-- 1 ugrad   438 Oct 17 09:46 DoublyLinkedList.h
+-rw-r--r-- 1 ugrad  6872 Oct 17 15:50 DoublyLinkedList.o
+-rw-r--r-- 1 ugrad    29 Oct 15 13:27 input.txt
+-rw-r--r-- 1 ugrad   504 Oct 16 10:02 ItemType.cpp
+-rw-r--r-- 1 ugrad   306 Oct 16 10:01 ItemType.h
+-rw-r--r-- 1 ugrad  1688 Oct 17 09:16 ItemType.o
+-rwxr-xr-x 1 ugrad 15952 Oct 17 15:50 main
+-rw-r--r-- 1 ugrad  1611 Oct 17 14:19 Main.cpp
+-rw-r--r-- 1 ugrad  6320 Oct 17 14:21 Main.o
+-rw-r--r-- 1 ugrad   378 Oct 16 19:06 Makefile
+-rw-r--r-- 1 ugrad   156 Oct 17 09:18 NodeType.h
+/home/ugrads/seong/cs2720/Cho_assignment3:/home/work/cs2720b

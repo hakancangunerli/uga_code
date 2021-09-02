@@ -1,0 +1,11 @@
+Selection sort
+O(n^2)
+
+Merge sort
+O(nLogn)
+
+heap sort
+O(nLogn)
+
+quick sort
+O(nLogn)

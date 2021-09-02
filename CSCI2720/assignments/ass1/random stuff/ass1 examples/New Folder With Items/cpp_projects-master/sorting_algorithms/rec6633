@@ -1,0 +1,25 @@
+Cho_assignment5:
+total 8
+drwxr-xr-x 2 ugrad 4096 Nov 15 21:19 program
+-rw-r--r-- 1 ugrad  225 Nov 13 14:44 Readme.txt
+-rw-r--r-- 1 ugrad    0 Nov 15 22:19 rec6633
+
+Cho_assignment5/program:
+total 216
+-rw-r--r-- 1 ugrad    84 Nov 14 18:47 complexity.txt
+-rw-r--r-- 1 ugrad    63 Nov 14 18:20 complexity.txt~
+-rw-r--r-- 1 ugrad    22 Nov 13 23:45 info.txt~
+-rw-r--r-- 1 ugrad    29 Nov 13 23:36 input.txt
+-rwxr-xr-x 1 ugrad 16232 Nov 15 21:19 main
+-rw-r--r-- 1 ugrad  2154 Nov 15 21:19 Main.cpp
+-rw-r--r-- 1 ugrad   661 Nov 14 13:14 Main.cpp~
+-rw-r--r-- 1 ugrad  7040 Nov 15 21:19 Main.o
+-rw-r--r-- 1 ugrad   242 Nov 13 15:03 makefile
+-rw-r--r-- 1 ugrad 48890 Nov 13 23:37 ordered.txt
+-rw-r--r-- 1 ugrad 48890 Nov 13 23:37 random.txt
+-rw-r--r-- 1 ugrad 48890 Nov 13 23:37 reverse.txt
+-rw-r--r-- 1 ugrad  4254 Nov 15 21:14 Sorting.cpp
+-rw-r--r-- 1 ugrad     0 Nov 13 15:04 Sorting.cpp~
+-rw-r--r-- 1 ugrad   613 Nov 15 21:14 Sorting.h
+-rw-r--r-- 1 ugrad  7040 Nov 15 21:14 Sorting.o
+/home/ugrads/seong/cs2720/Cho_assignment5:/home/work/cs2720b

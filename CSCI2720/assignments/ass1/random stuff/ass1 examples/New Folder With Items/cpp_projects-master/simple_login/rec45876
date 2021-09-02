@@ -1,0 +1,14 @@
+Cho_assignment1:
+total 88
+-rw-r--r-- 1 ugrad  1347 Sep 11 17:25 Instructor.cpp
+-rw-r--r-- 1 ugrad   670 Sep 11 17:25 Instructor.h
+-rw-r--r-- 1 ugrad    87 Sep 11 15:04 instructors.txt
+-rwxr-xr-x 1 ugrad 38580 Sep 11 17:25 main
+-rw-r--r-- 1 ugrad 14145 Sep 11 17:25 main.cpp
+-rw-r--r-- 1 ugrad   353 Sep 11 16:16 Makefile
+-rw-r--r-- 1 ugrad   216 Sep 11 14:52 README.txt
+-rw-r--r-- 1 ugrad     0 Sep 11 17:29 rec45876
+-rw-r--r-- 1 ugrad  1710 Sep 11 17:25 Student.cpp
+-rw-r--r-- 1 ugrad   823 Sep 11 17:25 Student.h
+-rw-r--r-- 1 ugrad   832 Sep 11 15:04 students.txt
+/home/ugrads/seong/cs2720/Cho_assignment1:/home/work/cs2720b
