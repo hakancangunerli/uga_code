@@ -1,0 +1,105 @@
+:doc title CSCI 2670 - Classwork 8
+___ Instructions
+> |> Create a \graf document with your answers to the following problems.  Save your work as a Grafstate file with the extension **{.graf.txt} and upload it to eLC.
+> |> You may work in small groups.  List in your document *{all} of the students in your group.
+
+Group Tommy,
+
+:task By the end of this assignment, you should be able to convert a DFA to an equivalent @regex using GNFAs.
+
+___ Exercises
+Convert the following DFA to a @regex:
+:+ dfa M
+{
+Q={q1,q2,q3,q4}
+S={a,b}
+q0=q1
+d(q1,a)=q2
+d(q1,b)=q3
+d(q2,a)=q1
+d(q2,b)=q4
+d(q3,a)=q3
+d(q3,b)=q2
+d(q4,a)=q1
+d(q4,b)=q4
+F={q3}
+}
+
+1. Create an initial GNFA G0 that is equivalent to M.
+
+:+ gnfa G0
+{
+Q={q1,q2,q3,q4,a,s}
+S={a,b}
+q0=s
+s->q1:\e
+q1->q2:a
+q1->q3:b
+q2->q1:a
+q2->q4:b
+q3->q3:a
+q3->q2:b
+q4->q1:a
+q4->q4:b
+q3->a:\e
+
+F={a}
+}
+
+2. Choose a state in Q.  Modify G0 to create an equivalent GNFA called G1 that contains all states in G0 except for the state you chose.
+
+:+ gnfa G1
+{
+Q={q1,q2,q4,a,s}
+S={a,b}
+q0=s
+s->q1:\e
+s->q2:ba*
+q1->q2:a\ubb
+q2->q1:a
+q2->q4:b
+q4->q1:a
+q4->q4:b
+q1->a:\e
+F={a}
+}
+
+3. Choose another state in Q.  Modify G0 to create an equivalent GNFA called G1 that contains all states in G0 except for the state you chose.
+
+:+ gnfa G2
+{
+Q={q1,q2,a,s}
+S={a,b}
+q0=s
+s->q1:\e
+s->q2:ba*
+q1->q2:a\ubb
+q2->q1:bb*a \u a
+q1->a:\e
+F={a}
+}
+
+4. Choose another state in Q.  Modify G1 to create an equivalent GNFA called G2 that contains all states in G1 except for the state you chose.
+
+:+ gnfa g3
+{
+Q={q1,q2,a,s}
+S={a,b}
+q0=s
+s->q1:ba*
+q1->q1:(a\ubb)\u(bb*a \u a)
+q1->a:\e
+F={a}
+}
+
+5. Choose another state in Q.  Modify G2 to create an equivalent GNFA called G3 that contains all states in G2 except for the state you chose.
+
+:+ gnfa g4
+{
+Q={a,s}
+S={a,b}
+q0=s
+s->a:ba*((bb*a \u a)\u(a\ubb))*
+
+F={a}
+}

@@ -67,9 +67,16 @@ in array-based unsorted list: the order in which the elements are stored is not 
 no duplicate elements allowed (although in the assignment it is allowed)
 
 ADT Operations: resetList is not an iterator operation
+operations
+Constructor
+Transformations
+Observer
+Iterator
 
-
-
+slide 9 
+unsorted array based list:
+3,7,5..
+within this example, 3 is not an integer, it's an object of ItemType. within this case, your implementation is not based on a data type. 
 
 
 */
