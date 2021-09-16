@@ -59,9 +59,11 @@ if you don't use *, you'll get the address of the variable.
 
 pointer can only store the address. 
 
-int * ptr; 
+int *ptr; 
 ptr = new int;  --> this will return an address. 
-*ptr = 15; --> 15 will be stored at the address. 
+*ptr = 15; --> 15 will be stored at the address
+delete ptr; to deallocate memory 
 
+if it's not an address, you cannot deallocate it.
 
 */ 
