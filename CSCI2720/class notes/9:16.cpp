@@ -57,6 +57,11 @@ cout << *ptr; will print out 5.
 if you don't use *, you'll get the address of the variable.
 
 
+pointer can only store the address. 
+
+int * ptr; 
+ptr = new int;  --> this will return an address. 
+*ptr = 15; --> 15 will be stored at the address. 
 
 
 */ 
