@@ -37,7 +37,24 @@ putItem, deleteItem
 
 look at slide 37: the insertion is O(n) since the loops are not nested. for and while [2N+1] 
 slide 40: deleteItem is O(n) because the loops are not nested. for and while. [2N+1]
+since the data is sorted, you can do binary search to find the item. for unsorted, you'd have to check the entire array, you just skip some here. 
 
+slide 44: 
+LESS: last = midPoint -1; 
+GREATER : first = midPoint + 1;
+
+check slide 45 for the complete code. 
+
+
+
+created by the compiler, pointer will take more space than the variable , store the address of an int variable. 
+
+let's say int is at address 4000, and int x=5;
+int *ptr; 
+ptr = &x;  // the ptr is now pointing to 4000.
+
+cout << *ptr; will print out 5.
+if you don't use *, you'll get the address of the variable.
 
 
 
