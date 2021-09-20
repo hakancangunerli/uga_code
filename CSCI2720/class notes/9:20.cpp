@@ -50,4 +50,9 @@ UnsortedList L1;
 L1.insert(item);
 
 
+getLength would just be return length;
+
+isFull would check if allocation of memory is successful. check slide 71. 
+
+function allocates memory and see if you create a new node or not. 
 */ 
