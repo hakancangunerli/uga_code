@@ -1,0 +1,41 @@
+:doc title CSCI 2670 - Classwork 10
+
+Group: Tommy, CJ
+___ Instructions
+> |> Create a \graf document with your answers to the following problems.  Save your work as a Grafstate file with the extension **{.graf.txt} and upload it to eLC.
+> |> You may work in small groups.  List in your document *{all} of the students in your group.
+
+:task By the end of this assignment, you should be able to create a context-free grammar that recognized a @reglang.
+
+___ Exercises
+> Consider the following NFA N:
+:+ nfa N
+{
+Q={q1,q2,q3,q4}
+S={a,b,c}
+d(q1,a)={q1,q2}
+d(q1,b)={q3}
+d(q2,c)={q3,q4}
+d(q3,c)={q1,q4}
+d(q3,\e)={q4}
+d(q4,a)={q2}
+q0=q1
+F={q4}
+}
+
+1. Convert N to an equivalent CFG.
+
+:+ cfg cfg1
+{
+V={Q1,Q2,Q3,Q4}
+S={a,b,c}
+v0=Q1
+Q1->a Q2 | b Q3 | a Q1
+Q2-> c Q4 | c Q3
+Q3-> c Q4 | \e Q4 | c Q1
+Q4-> a Q2 | \e
+
+}
+
+:sim cfg1 b
+:sim cfg1 bc
