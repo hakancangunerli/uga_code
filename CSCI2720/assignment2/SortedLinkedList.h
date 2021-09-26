@@ -19,6 +19,8 @@ class SortedLinkedList{
     int searchItem(ItemType item);
     ItemType getNextItem();
     void resetList();
+    void printList(SortedLinkedList* list);
+
     private:
     ListNode *head;
     ListNode *currentPos; 

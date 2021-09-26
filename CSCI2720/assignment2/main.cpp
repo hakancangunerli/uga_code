@@ -16,11 +16,11 @@ int main(int argc, char const *argv[])
     SortedLinkedList *list = new SortedLinkedList();
 
     cout << "Commands: " << endl;
-    cout << "(i) -  Insert value" << endl;
-    cout << "(d) -  Delete value" << endl;
-    cout << "(s) -  Search value" << endl;
+    cout << "(i) -  Insert value " << endl;
+    cout << "(d) -  Delete value " << endl;
+    cout << "(s) -  Search value " << endl;
     cout << "(n) -  Print next iterator value" << endl;
-    cout << "(r) -  Reset iterator" << endl;
+    cout << "(r) -  Reset iterator " << endl;
     cout << "(a) -  Delete alternate nodes" << endl;
     cout << "(m) -  Merge two lists" << endl;
     cout << "(t) -  Intersection" << endl;
@@ -38,27 +38,70 @@ int main(int argc, char const *argv[])
         {
 
         case 'i':
+            list->printList(list);
+            // insert
+            int num;
+            cout << "Enter number";
+            cin >> num;
+            ItemType it;
+            it.initialize(num);
+            list->insertItem(it);
+            list->printList(list);
             break;
 
         case 'd':
+            list->printList(list);
+            int num;
+            cout << "Enter number for deletion";
+            cin >> num;
+            ItemType it;
+            it.initialize(num);
+            list->deleteItem(it);
+            list->printList(list);
+
             break;
         case 's':
+            int num;
+            cout << "enter value for searching";
+            cin >> num;
+            ItemType it;
+            it.initialize(num);
+            int indexing = list->searchItem(it);
+            if (it == -1)
+            {
+                cout << "item not found";
+            }
+            else
+            {
+                cout << "index" << indexing << endl;
+            }
             break;
-        case 'n':
+        case 'n': // TODO:IMPLEMENT CASE N
+            if (list->isEnd())
+            {
+            }
             break;
         case 'r':
+            list->resetList();
+            cout << "Iterator has been reset";
             break;
         case 'a':
+            list->deleteAlternate(); // TODO: IMPLEMENT deleteAlternate
             break;
         case 'm':
             break;
         case 't':
             break;
         case 'p':
+            list->printList(list);
             break;
         case 'l':
+            cout << "List length";
+            cout << list->getLLLength();
+            << endl;
             break;
         case 'q':
+            working = false;
             break;
 
         default:
