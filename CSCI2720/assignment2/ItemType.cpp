@@ -1,27 +1,36 @@
-// DONE 
-
+#include <iostream>
+#include <fstream>
 #include "ItemType.h"
-using namespace std; 
+
+using namespace std;
 
 ItemType::ItemType() {
+    value = 0;
 }
 
-
-Comparison ItemType::compareTo(ItemType item)  {
-if (item.getValue () > value){
-    return Comparison::GREATER;
-}else if (item.getValue () < value){
-    return Comparison::LESS;
-}  else {
-    return Comparison::EQUAL;
+ItemType::ItemType(int value) {
+    this -> value = value;
 }
 
-}// compareTo
+Comparison ItemType::compareTo(ItemType item) {
+    if (this -> value > item.getValue()) {
+	return GREATER;
+    }
+
+    else if (this -> value < item.getValue()) {
+	return LESS;
+    }
+
+    else {
+	return EQUAL;
+    }
+}
 
 int ItemType::getValue() const {
     return value;
-}// getValue 
+}
 
 void ItemType::initialize(int num) {
- value = num; 
-}// initialize
+    this -> value = num;
+}
+

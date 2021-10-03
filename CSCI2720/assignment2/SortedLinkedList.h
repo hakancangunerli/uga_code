@@ -1,30 +1,36 @@
-#include <iostream> 
-#include <string>
-#include "ListNode.h"
-// DONE 
-
 #ifndef SORTEDLINKEDLIST_H
 #define SORTEDLINKEDLIST_H
 
 #include "ItemType.h"
-//ifndef stuff 
+#include "ListNode.h"
 
-class SortedLinkedList{
-    public:
+class SortedLinkedList {
+ public:
     SortedLinkedList();
-    ~SortedLinkedList(); // destructor 
-    int getLLLength() const; // get length of list, had to name it like this cause i also need the int length; 
+    ~SortedLinkedList();
+    int getLength() const;
     void insertItem(ItemType item);
     void deleteItem(ItemType item);
+    void deleteItem(int index);
     int searchItem(ItemType item);
-    ItemType getNextItem();
-    void resetList();
-    void printList(SortedLinkedList* list);
-
-    private:
-    ListNode *head;
-    ListNode *currentPos; 
-    int length; 
+    ItemType searchItem(int index);
+    ItemType GetNextItem();
+    void ResetList();
+    void reverse();
+    ListNode* findPrevNode(ListNode* node);
+    ListNode* getLastNode();
+    void printList();
+   ListNode* getHead();
+   void mergeList(SortedLinkedList* list);
+  void printList(SortedLinkedList* list);
+  bool isDuplicate(ItemType item);
+  void deleteAlternate();
+  void findCommonElements(SortedLinkedList* list);
+    
+ private:
+    ListNode* head;
+    ListNode* currentPos;
+    int lengthValue;
 };
 
 #endif
