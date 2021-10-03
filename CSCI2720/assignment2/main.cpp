@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 		}
 		case 'n':
 		{
-			ItemType item = list.GetNextItem(); // get the next item in the list.
+			ItemType item = list.GetNextItemEndofList(); // get the next item in the list.
 
 			if (list.getLLLength() > 0)
 				cout << item.getValue(); // if it's larger than 0, print the index of the item.
@@ -176,7 +176,7 @@ int main(int argc, char *argv[])
 
 		case 'q':
 		{
-			cout << "Quitting program...";
+			cout << "Quitting program...\n";
 			switchLoop = false; // make switch false so it quits.
 			break;
 		}

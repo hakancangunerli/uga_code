@@ -188,10 +188,9 @@ ItemType SortedLinkedList::GetNextItem()
     { // if we are reaching the end, we need to the beginning.
 
         if (currentPos->next == nullptr)
-        { //
+        { 
             item = currentPos->item;
             currentPos = head;
-            cout << "The end of the list has been reached.\n"; // to print.
             return item;
         }
     }
@@ -205,6 +204,54 @@ ItemType SortedLinkedList::GetNextItem()
     return item;
 
 } // end GetNextItem
+
+
+
+ItemType SortedLinkedList::GetNextItemEndofList() // the sole difference between GetNextItem and GetNextItemEndofList is so that we don't run into issues when we use getNext since i got bunch of errors while i was making it. still works however.
+{
+  
+    ItemType item;
+
+    if (head == nullptr)
+    { // there's no head, list's empty.
+        cout << "List is empty" << endl;
+
+        return item;
+    }
+
+    if (currentPos != nullptr)
+    { // if we are reaching the end, we need to the beginning.
+
+        if (currentPos->next == nullptr)
+        { 
+            item = currentPos->item;
+            currentPos = head;  
+            cout << "The end of the list has been reached.\n";
+            return item;
+        }
+         
+    }
+
+    if (currentPos == nullptr) // if null, then it needs to become the head
+        currentPos = head;
+
+    item = currentPos->item; // advance pointer, return item at the end.
+    currentPos = currentPos->next;
+
+    return item;
+
+} // end GetNextItem
+
+
+
+
+
+
+
+
+
+
+
 
 void SortedLinkedList::ResetList()
 {
@@ -378,7 +425,7 @@ void SortedLinkedList::findCommonElements(SortedLinkedList *list)
     } // end while
 
     cout << "Intersection: ";
-    printList(list3);
+    list3->printList();
 } //findCommonElements
 
 ListNode *SortedLinkedList::getHead()
