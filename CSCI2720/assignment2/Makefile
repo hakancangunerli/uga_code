@@ -6,7 +6,7 @@ main: ItemType.cpp SortedLinkedList.cpp main.cpp
 	g++ $(FLAGS) -o main ItemType.cpp SortedLinkedList.cpp main.cpp
 
 run:
-	./main input.txt
+	./main 
 
 clean:
 	rm main
