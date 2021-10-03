@@ -191,7 +191,7 @@ ItemType SortedLinkedList::GetNextItem()
         { //
             item = currentPos->item;
             currentPos = head;
-
+            cout << "The end of the list has been reached.\n"; // to print. 
             return item;
         }
     }
@@ -201,8 +201,10 @@ ItemType SortedLinkedList::GetNextItem()
 
     item = currentPos->item; // advance pointer, return item at the end.
     currentPos = currentPos->next;
-
+    
     return item;
+
+
 } // end GetNextItem
 
 void SortedLinkedList::ResetList()
@@ -223,7 +225,6 @@ ListNode *SortedLinkedList::findPrevNode(ListNode *node)
         prev = curr;       // otherwise, we need to keep going.
         curr = curr->next; // advance the iterator.
     }
-}
 
 return prev;
 }
@@ -363,7 +364,7 @@ void SortedLinkedList::findCommonElements(SortedLinkedList *list)
                 break;
             }
         }
-        if (commonElement == false)
+        if (commonElement == false) 
         {
             deleteItem(position->item);
         }
@@ -371,7 +372,7 @@ void SortedLinkedList::findCommonElements(SortedLinkedList *list)
         whileSearching = (position != NULL);
     }
 
-    cout << "Intersection";
+    cout << "Intersection:";
     printList(this);
 } //findCommonElements
 

@@ -7,7 +7,7 @@ $ `make compile`:
 
 to run:
 
-$ ` make run`
+$ ./main <filename>
 
 to remove main:
 
