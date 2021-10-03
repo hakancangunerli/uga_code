@@ -1,4 +1,4 @@
-// DO THE TODOS AND WE'RE DONE HERE. 
+// DO THE TODOS AND WE'RE DONE HERE.
 #include <iostream>
 #include "SortedLinkedList.h"
 
@@ -191,7 +191,7 @@ ItemType SortedLinkedList::GetNextItem()
         { //
             item = currentPos->item;
             currentPos = head;
-            cout << "The end of the list has been reached.\n"; // to print. 
+            cout << "The end of the list has been reached.\n"; // to print.
             return item;
         }
     }
@@ -201,9 +201,8 @@ ItemType SortedLinkedList::GetNextItem()
 
     item = currentPos->item; // advance pointer, return item at the end.
     currentPos = currentPos->next;
-    
-    return item;
 
+    return item;
 
 } // end GetNextItem
 
@@ -226,7 +225,7 @@ ListNode *SortedLinkedList::findPrevNode(ListNode *node)
         curr = curr->next; // advance the iterator.
     }
 
-return prev;
+    return prev;
 }
 
 void SortedLinkedList::printList()
@@ -332,7 +331,7 @@ void SortedLinkedList::deleteAlternate()
     printList(this);
 } //deleteAlternate
 
-// TODO: comment about this in readme. 
+// TODO: comment about this in readme.
 void SortedLinkedList::findCommonElements(SortedLinkedList *list)
 {
     cout << "List 1: ";
@@ -342,11 +341,14 @@ void SortedLinkedList::findCommonElements(SortedLinkedList *list)
 
     ListNode *position = head;
     bool whileSearching = (position != NULL);
+    SortedLinkedList *list3 = new SortedLinkedList();
     while (whileSearching)
     {
         ListNode *location = list->head;
-        bool untilNull = (location != NULL);
-        bool commonElement = false;
+        bool commonElement, untilNull;
+        commonElement = false;
+        untilNull = (location != NULL);
+
         while (untilNull)
         {
             switch (position->item.compareTo(location->item))
@@ -356,24 +358,27 @@ void SortedLinkedList::findCommonElements(SortedLinkedList *list)
                 untilNull = (location != NULL);
                 break;
             case Comparison::EQUAL:
+
                 commonElement = true;
                 untilNull = false;
+
                 break;
             case Comparison::LESS:
                 untilNull = false;
                 break;
             }
         }
-        if (commonElement == false) 
+        if (commonElement)
         {
-            deleteItem(position->item);
+            list3->insertItem(position->item);
         }
+
         position = position->next;
         whileSearching = (position != NULL);
-    }
+    } // end while
 
-    cout << "Intersection:";
-    printList(this);
+    cout << "Intersection: ";
+    printList(list3);
 } //findCommonElements
 
 ListNode *SortedLinkedList::getHead()

@@ -1,7 +1,4 @@
-// DONE EXCEPT FOR INTERSECTION 
-
-// TODO: INTERSECTION DOES NOT WORK ONLY. EVERYTHING ELSE BUENO
-
+// DONE
 #include <iostream>
 #include <fstream>
 #include <istream>
@@ -85,7 +82,7 @@ int main(int argc, char *argv[])
 		}
 		case 's':
 		{
-			cout << "proselytism value to search: ";
+			cout << "value to search: ";
 			int searchValue;
 			cin >> searchValue;
 			ItemType searchNumberItemType(searchValue);		   // search the list for the given int searchValue.
@@ -140,8 +137,8 @@ int main(int argc, char *argv[])
 				ItemType item;
 				string num;
 				num = nums.substr(0, nums.find(delimiter)); // get a substring of our string until the delimiter.
-				nums.erase(0, 1 + nums.find(delimiter));	// erase between zero and then return index+1
-				int proselytism = stoi(num);						// convert string to int.
+				nums.erase(0, nums.find(delimiter) +1 );	// erase between zero and then return index+1
+				int proselytism = stoi(num);						// convert string to int. 
 				item.initialize(proselytism); 
 				list2->insertItem(item); // insert the item into the list2.
 			}
