@@ -1,14 +1,16 @@
 Hakan Gunerli
+
 #811727237
+
 hcg41790@uga.edu
 
 to compile:
 
-$ `make compile`:
+$ `make compile`
 
 to run:
 
-$ ./main <filename>
+$ `./main <filename>`
 
 to remove main:
 
@@ -17,7 +19,8 @@ $ `make clean`
 Merge is a O(n) since the while loop iterates through the list and the rest is O(1), or constant. Since the loop goes until the length of the list, the most efficient way to conduct this would be such way. Could also do a nested loop here with worse complexity. 
 
 
-Merge pseudocode:
+`Merge pseudocode:`
+
 position equal to the head of the list 
 whileSearching is not position null, 
 print lists to the user
@@ -31,7 +34,8 @@ make position point to the next
 and set whileSearching to the position not equal to null again 
 print the new list 
 
-finding common elements' pseudocode is as follows: 
+
+`CommonElements` pseudocode:
 
 print the lists to the user
 set our position to equal to the head of the list 
