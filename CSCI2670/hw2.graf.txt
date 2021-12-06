@@ -1,0 +1,55 @@
+:doc title CSCI 2670: Homework 2
+**{Type your answers in a \graf document and submit your \graf file to eLC.}
+
+__ Exercises
+1. Let \S={a,b}.  Let A={a^{i}b^{j}c^{k}|0\lei\lej\lek}}.  Use the pumping lemma for @cfls to prove that A is not a @cfl.
+
+Let's assume that the A is a CFL and we'll try to find a contradiction.Let P be the pumping length of the pumping lemma. We can use a sample string, s, s= a^{p}b^{p}c^{p}
+
+3 conditions to be met in order to be true:
+for each i>= 0, uv^{i}xy^{i}z
+|vy| > 0   [cannot be the empty string]
+|vxy| =< p
+
+Let s be uvxyz,
+
+If we were to make the i equal to zero, where uv^{0}xy^{0}z. This will contain the same amount of as as our sample string (a^{p}b^{p}c^{p}). It will though have less bs and cs which will be contradiction to the pumping lemma.
+
+In addition, if we were to let i be 2, uv^{2}xy^{2}z, uvvxyyz will not have the symbols properly. it won't be in A.
+
+Thus, s (a^{p}b^{p}c^{p}) will not be pumped to A which is our CFL due to these at least two violations.
+
+2. Convert the following CFG to an @eqnt PDA:
+:fig code
+{
+S={a,b}*
+V={X,Y,S}
+v0=S
+S->X S | Y X
+X->a X | Y
+Y->b | \e
+}
+:+ pda pda1
+{
+title Example PDA
+Q={qs,q1,q2,qf,qSX,qXY,qAX}
+S={a,b}
+T={a,b,$,X,S,Y}
+q0=qs
+F={qf}
+qs->q1:\e,\e->$
+q1->q2:\e,\e->\e
+q2->qSX:\e,S->S
+qSX->q2:\e,\e->X
+q2->qf:\e,$->\e
+q2->qXY:\e,S->X
+qXY->q2:\e,\e->Y
+q2->qAX:\e,X->X
+qAX->q2:\e,\e->a
+q2:\e,X->Y
+q2:\e,Y->b
+q2:\e,Y->\e
+q2:a,a->\e
+q2:b,b->\e
+
+}

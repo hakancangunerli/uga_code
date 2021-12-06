@@ -83,7 +83,7 @@ F={a}
 
 :+ gnfa g3
 {
-Q={q1,q2,a,s}
+Q={q1,a,s}
 S={a,b}
 q0=s
 s->q1:ba*

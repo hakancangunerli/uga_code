@@ -1,0 +1,46 @@
+:doc title CSCI 2670 - Classwork 19
+___ Instructions
+> |> Create a \graf document with your answers to the following problems.  Save your work as a Grafstate file with the extension **{.graf.txt} and upload it to eLC.
+> |> You may work in small groups.  List in your document *{all} of the students in your group.
+
+__ Exercises
+
+**{1. Prove that a Turing machine with a doubly-infinite tape is not more powerful that a Turing machine with a usual tape.}
+
+We can model through description as well, let P_{left} be the left portion of the input and let P_{right} be the right portion (blank spaces) including the string.
+
+TM with a doubly-infinite tape can be simulated a TM with two tapes marking the beginning of the input string and ignoring P_{left}.
+
+A two tape TM can also simulate a TM with a doubly-infinite tape by using one tape for P_{left} and the other (second tape) for P_{right} but in reverse.
+
+**{2. Prove that A_{TM} \mred ~{EQ_{TM}}.}
+
+EQTM = { | M1,M2 are two TMs such that L(M1)=L(M2)}
+or EQTM checks whether two languages are equivalent.
+
+ATM = all inputs are accepted.
+EQTM=the inputs are equal.
+
+we define our reducibility as function:
+m1 = accept all inputs
+m2 = input x
+1. ignore input, run M on w
+2. If M accepts w, accept
+3. reject
+
+L(M1) = \0
+if M accepts w, then L(M2) = \S*
+if M reject w, then L(M2) = \0
+
+thus m1,w \in ATM and f(m,w) =  which are also \in ~{EQTM}.
+
+Therefore we can say that ATM is mapping reducible to ~{EQTM}.
+
+**{3. Argue that EQ_{TM} is not Turing recognizable and that ~{EQ_{TM}} is not Turing recognizable.}
+
+Since ~{A_{TM}} \mred EQ_{TM} is the same thing as A_{TM} \mred ~{EQ_{TM}}.
+
+We can argue that both EQTM and ~{EQTM} are **{NOT} Turing recognizable.
+Mapping reducibility should hold value as inverse as well, which means A_{TM} \mred ~{EQ_{TM}} is also possible for ~{A_{TM}} \mred EQ_{TM}.
+
+We can test the recognizablity by doing another version of our prove above,  ~{A_{TM}} \mred ~{EQ_{TM}} which would automatically be not turing recognizable given ~{A_{TM}} is not recognizable. If we were to do the complement of each, or A_{TM} mred EQ_{TM}, it would still be not turing recognizable. This would mean that EQ_{TM} is not co-recognizable, which means it's not **{co-recognizable} in either of the cases.

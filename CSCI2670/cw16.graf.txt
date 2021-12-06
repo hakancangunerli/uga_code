@@ -1,0 +1,51 @@
+:doc title CSCI 2670 - Classwork 16
+___ Instructions
+
+__ Exercises
+Let A={w|w is a binary string containing an odd number of \[1]s}.
+Let B={a^{n}b^{n}|n\ge0}.
+
+1. Construct a mapping @redcn from A to B.  Write the \graf code for a Turing machine that computes your mapping @redcn @fn.
+
+Define mapping reduction f by the following mapping Turing machine∶
+:+ tm tm1
+{
+Q={q0,q1,q2,q3,q4,q5,q6,q7,qstay}
+S={0,1}
+T={0,1,a,b,\_}
+q0=qstay
+tapes=2
+
+qstay->q0: 0,S // \_,R
+q0: 0,R // \_,S
+q0->q1: 1,R // \_->\_,R
+q1: 0,R // \_,S
+q1->q2: 1,R // \_->a,R
+q2: 0,R // \_,S
+q2: 1,R // \_,R
+q2->q3: \_,S // \_,L
+q3->q4: \_,S // \_->b,L
+q4: \_,S // \_,L
+q4->q5: \_,S // a,R
+q5->q6: \_,S // \_->a,R
+q6: \_,S // \_,R
+q6->q7: \_,S // b,L
+q7->q2: \_,S // \_->b,L
+}
+:sim tm1 0110
+:sim tm1 01101
+
+2. Prove that your @fn from #1 has the mapping @redcn property.
+
+!{Suppose that w ∈ A. then f(w) ∈ B since f is a mapping reduction. M accepts f(w) so A accept w.}
+
+___ Yes=>Yes
+
+> Suppose that w\inA. Because f(w)=x and x\inB, so f(w)\inB.
+
+___ No=>No
+
+!{Suppose that w !∈ A. Then, f(w) !∈ B since f is a mapping reduction. M rejects f(w) so M2 rejects w.}
+
+> Suppose that w\!inA. Because f(w)=x and x\!inB, so f(w)\!inB.
+Thus, A\mredB.

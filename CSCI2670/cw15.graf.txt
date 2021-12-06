@@ -1,0 +1,108 @@
+:doc title CSCI 2670 - Classwork 15
+___ Instructions
+> |> Create a \graf document with your answers to the following problems.  Save your work as a Grafstate file with the extension **{.graf.txt} and upload it to eLC.
+> |> You may work in small groups.  List in your document *{all} of the students in your group.
+
+1. Create a mapping Turing machine to compute the function
+>>> F(x,y)=x+y,
+where x and y are binary numbers !{with the same number of bits}.  Assume that the input values x and y are separated by the \[#] symbol.
+
+/* The command \[:sim M1 10#10] should produce the value \[100].
+
+(*) Make a table of input values and corresponding out values.
+
+2. Create a mapping Turing machine to compute the function
+>>> f(n)=n+1,
+where n is a binary number.
+:+ tm tm1
+{
+Q={qs,q0,q1,q2, q3, q4,qstay}
+S={0,1,#}
+T={0,1,\_, #}
+q0=qs
+tapes = 3
+/* q0:
+/* q1: first binary (before #)
+/* q2: second binary (after #)
+
+/* we need three tapes because we want to handle two characters, /* comparisons and finally moving them to the final tape
+
+/* we write the characters at the first tape, stay put the second tape until we hit q1 where we fill the second tape
+qs->q0: 0,S // \_,R // \_,R
+qs->q0: 1,S // \_,R // \_,R
+
+q0: 0->\_,R // \_->0,R // \_,S
+q0: 1->\_,R // \_->1,R // \_,S
+
+/* we write the characters at the second tape, stay put the first tape(since we filled it out at q0)
+q0->q1: #->\_,R // \_,S // \_,S
+
+q1: 0->\_,R // \_,S // \_->0,R
+q1: 1->\_,R // \_,S // \_->1,R
+
+/* stay put before we start the operations
+q1->qstay: \_,S // \_,S // \_,S
+qstay->q2:\_,L // \_,L // \_,L
+
+/* we start addition
+
+/* if we hit a zero, on both it's zero
+/* otherwise we have to put a one to the tape
+q2: \_->0,L // 0,L // 0,L
+q2: \_->1,L // 1,L // 0,L
+q2: \_->1,L // 0,L // 1,L
+
+/* if a read a blank put a zero, read/write 1 for the remaining /* tapes
+q2->q3: \_->0,L // 1,L // 1,L
+
+/* if i hit a one, it should either be two zeros or two ones at the /* end for us to type 1 for the left
+q3->q2: \_->1,L // 0,L // 0,L
+q3: \_->0,L // 1,L // 0,L
+q3: \_->0,L // 0,L // 1,L
+q3: \_->1,L // 1,L // 1,L
+
+q2->q4: \_->0,L // \_,S // \_,S
+
+q3->q4: \_->1,L // \_,S // \_,S
+}
+:sim tm1 001#001
+
+:+ tm tm2
+{
+Q={q0,q1,q2,q3,q4,q5,qstay}
+S={0,1}
+T={0,1,\_}
+q0=q0
+tapes = 2
+
+/* move everything from tape 1 to tape 2 for addition operations
+q0->q1: 0,S // \_,R
+q0->q1: 1,S // \_,R
+q1: 0->\_,R // \_->0,R
+q1: 1->\_,R // \_->1,R
+
+/* qstay to handle stay issues i've had while designing this
+q1->qstay: \_,S // \_,S
+/* at q2, we will begin comparison and addition
+qstay->q2:\_,S // \_,L
+
+/* we have two options,
+/*if we read a zero on the second tape, we write 1 to the first tape
+/* if we read a one on the second tape, we write 0 to the first tape /* (zero because we're doing a carry)
+
+/* if we've found a 0 and wrote a one, we'd have to keep doing the /* left operation
+
+q2->q4: \_->1,L // 0,L
+/* if we've found a 1 and wrote a 0, we'd have to keep doing the /* /* left operation to fill the rest
+
+q2->q3: \_->0,L // 1,L
+q3: \_->0,L // 1,L
+
+q3->q4: \_->1,L // 0,L
+q4: \_->0,L // 0,L
+q4: \_->1,L // 1,L
+/* if we're at the end since we've done all zeros and carried a one, /*we have to put a 1 at the very end basically the operation you'd /* do for a 1111 -> 10000
+
+q3->q5: \_->1,L // \_,L
+}
+:sim tm2 111

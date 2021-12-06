@@ -1,0 +1,92 @@
+:doc title CSCI 2670 - Classwork 11
+___ Instructions
+> |> Create a \graf document with your answers to the following problems.  Save your work as a Grafstate file with the extension **{.graf.txt} and upload it to eLC.
+> |> You may work in small groups.  List in your document *{all} of the students in your group.
+
+:task By the end of this assignment, you should be able to design a CFG to solve a problem.
+
+> Consider the following CFG G:
+
+:+ cfg G
+{
+V={E,T,F}
+S={1,+,*,[,]}
+v0=E
+E->T + E|T
+T->F * T|F
+F->1|[ E ]
+}
+
+G is a simple compiler for arithmetical expressions that use:
+> |> addition - \[+]
+> |> multiplication - \[*]
+> |> grouping
+>> \[`[] and \[`]] are used here instead of \[(] and \[)].
+> |> the single digit \[1]
+
+> We can see from the parse tree that G respects the order of operations and grouping.
+
+[i] Ignore the left-most derivations as they leave out the brackets.
+
+___ Exercises
+1. Expand the grammar to handle binary numbers of any length.  For example, your grammar should be able to perform the following:
+@{puzzle} :sim G 10*[101+110]
+i
+
+:+ cfg G2
+{
+V={E,F,Z,T}
+S={0,1,+,*,[,]}
+v0=E
+F->1 | [ E ]
+Z->0 | [ E ]
+T -> F | Z | F * T | Z * T
+E -> T | T + E | F E | Z E
+}
+
+:sim G2 10*[101+110]
+
+2. Expand your grammar to handle the subtraction operator while respecting the order of operations.  Use the \[~] symbol for the *{minus sign}.
+
+:+ cfg G3
+{
+V={E,F,Z,T}
+S={0,1,+,~,[,]}
+v0=E
+F->1 | [ E ]
+Z->0 | [ E ]
+T -> F | Z | F ~ T | Z ~ T
+E -> T | T + E | F E | Z E
+}
+
+:sim G3 10~[101+110]
+
+3. Expand your grammar to handle the division operator while respecting the order of operations.  Use the \[/] symbol for the division operator.
+
+:+ cfg G4
+{
+V={E,F,Z,T}
+S={0,1,+,/,[,]}
+v0=E
+F->1 | [ E ]
+Z->0 | [ E ]
+T -> F | Z | F / T | Z / T
+E -> T | T + E | F E | Z E
+}
+
+:sim G4 10/[101+110]
+
+3. Expand your grammar to handle the exponent operator while respecting the order of operations.  Use the \[^] symbol for the exponent operator.
+
+:+ cfg G5
+{
+V={E,F,Z,T}
+S={0,1,+,^,[,]}
+v0=E
+F->1 | [ E ]
+Z->0 | [ E ]
+T -> F | Z | F ^ T | Z ^ T | F E
+E -> T | T + E | F E | Z E
+}
+
+:sim G5 10^101+110

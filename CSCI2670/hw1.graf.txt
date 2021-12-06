@@ -1,0 +1,59 @@
+:doc title CSCI 2670: Homework 1
+BS”D
+
+**{Type your answers in a \graf document and submit your \graf file to eLC.}
+
+__ Exercises
+**{1. Use the @recdef of the *{reverse} of a string along with *{mathematical induction} to prove the following:}
+**{>>> If v and w are strings over \S, then (v\.w)^R=w^R\.v^R.}
+
+Induction requires a basis and a induction step.
+
+Say that the base case is the empty string, \e. the reversal of \e would be \epsilon itself, or mathematically \e^R = \e
+
+we can also say that if there exists a string as an element of \S — c \in \S —
+and w is a string over our alphabet — w \in \S*—, then we can say that c·w is also a string over our alphabet, or mathematically, (w·c)^R = cw^R
+
+Our idea is to prove that if we have two strings, w and v, which belong to \S*, then reverse of of those should be distributable
+
+Basis: Let's make the assumption that w is an empty string or, w=\e, then:
+
+(v\.w)^R = (v\.\e)^R, which would be the same thing as (v)^R which from the way we defined reversal of a string would be equated to \e * (v)^R
+
+since \e is where w is, we can say replace the \e with w to end up with (w)^R \. (v)^R
+This allowed us to prove our empty string proposal. The next is to prove the second one where we pick a random string that is a part of \S .
+
+Let's assume that we have two strings, where א(aleph) signifies a string that is a part of \S* (a string that is smaller than the v or w)  and c which is a string that is an element of \S .
+
+Let's say assume that our w is the concatenation of aleph and c, or w= א \. c
+
+(v \. w)^R is the same thing as saying (w \. (א \. c))^R . now from the definition of reversal of the string we can say that that ((w \. א) \. c)^R is permissible. using our induction hypothesis above we can say that c \. (w \. א)^R  is also possible. using the associativity of the interpunct, we can say further switch to c \. ((א ^R \. w^R))  which using the definition of reversal would be (c \. א^R)\.w^R
+
+finally, using our definition of w= א \. c we can say that  (א \. c)^R \. (w)^R is the same thing as v^R \. w^R  which finally gives us the reversal or two strings recursively defined, or w^R \. v^R, proving our induction hypothesis.
+
+**{2. Let \S={a,b}.  Let A={w|w\in\S*\^w=w^R}.  Use the pumping lemma for @reglangs to prove that A is not a @reglang.}
+
+According to the Pumping Lemma theorem, if A is a regular language it needs to be able to satisfy where string is denoted as s, A of length denoted as p:
+
+1. for each i >= 0 and xy^iz \in A
+2. |y| > 0
+3. |xy| =< p
+
+Consider the string s= a^pba^p. s \in A because s = s^R and |s| = 2p+1 >= p. We can now get our conditions. (we split the string s into 3 parts as xyz)
+
+the third condition |xy| =< p shows us that xy are only made of a. so then, z would be the rest of the a's and ba^[, since the second condition says that the length of y is longer than zero, we can conclude that it'll at least have one a. Mathematically,
+
+x= a^{\beta}
+y= a^{\theta}
+z= a^{\gamma}ba^p
+where beta is more than or equal to zero, theta is at least 1 and gamma is more than or equal to zero.
+
+we can now denote xyz as a^{\beta +\theta + \gamma} ba^p. we must be able to say that the superscripts for a could combine to be p. testing for p =4 we'd have:
+
+a^{\beta} + a^{\theta}+ a^{\theta}+ a^{\theta} + a^{\theta} + a^{\gamma} ba^p
+
+we'd end up with
+
+a^{(2\theta + p)}b^a^p
+
+∴ xy^4z \!in A since the reversal of this not equal to itself, or a^{(2\theta + p)}b^a^p != a^{(2\theta + p)}b^a^p since \theta must be more than or equal to 1, giving us a mismatch. Thus, A is not a regular language.
