@@ -146,23 +146,24 @@ int main(int argc, char *argv[])
     }
     else if (algo == 'r')
     {
-
-        cout << endl; // empty line
-        // quick-sort-rp stands for quick sort with random element as the pivot
         if (strcmp(argv[1], "generate") == 0)
         {
-            
-            Sorting.QuickSort(array, rand() % value_generate, value_generate - 1); // randomize the pivot
+
+            Sorting.quickSortRP(array, 0, value_generate - 1);
             Sorting.PrintArray(array, value_generate);
-            cout << "#QuickSort RP comparisons: " << Sorting.getComparison() << endl;
+            cout << "#Quick sort RP comparisons: " << Sorting.getComparison() << endl;
             cout << endl;
+            
         }
         else
         {
-            Sorting.QuickSort(array, rand() % i, i - 1); // randomize the pivot, again
+    
+
+            Sorting.quickSortRP(array, 0, i-1); // normal quicksort.
             Sorting.PrintArray(array, i);
-            cout << "#Quick sort RP comparisons:  " << Sorting.getComparison() << endl;
+            cout << "#Quick sort RP comparisons: " << Sorting.getComparison() << endl;
             cout << endl;
+            
         }
     }
 

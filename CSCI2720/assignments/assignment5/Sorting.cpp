@@ -1,13 +1,14 @@
 #include "sorting.h"
 using namespace std;
 #include <iostream>
+#include <ctime>
 
 int Sorting::getComparison()
 {
     return comparisons; // we need this for returning the amount of comparisons.
 }
 // Author: Hakan Gunerli
-void Sorting::Swap(int &a, int &b) // swap is basically a swap. 
+void Sorting::Swap(int &a, int &b) // Swap is basically a Swap.
 {
     // if this was python i could've just a,b = b,a. :(
     int temporaryValue = a;
@@ -31,7 +32,7 @@ void Sorting::Split(int values[], int first, int last, int &splitPoint)
         {
             comparisons++;
 
-            if (values[first] > splitVal) // if first is bigger than split val, we're not on the correct side. 
+            if (values[first] > splitVal) // if first is bigger than split val, we're not on the correct side.
             {
                 onCorrectSide = false;
             }
@@ -46,7 +47,7 @@ void Sorting::Split(int values[], int first, int last, int &splitPoint)
 
         while (onCorrectSide)
         {
-            comparisons++; 
+            comparisons++;
             if (values[last] <= splitVal) // if last is smaller than splitval, we're at the wrong place again.
             {
                 onCorrectSide = false;
@@ -60,23 +61,23 @@ void Sorting::Split(int values[], int first, int last, int &splitPoint)
 
         if (first < last)
         {
-            Swap(values[first], values[last]); // swap the values.
+            Swap(values[first], values[last]); // Swap the values.
             first++;
             last--;
         }
-    } while (first <= last); // while we haven't reached the end of the array.
+    } while (first <= last); // while we haven't reached the end of the valuesay.
     splitPoint = last;
-    Swap(values[saveFirst], values[splitPoint]); // swap the split point with the first value.
+    Swap(values[saveFirst], values[splitPoint]); // Swap the split point with the first value.
 }
 // Anjiya Kazani
 int Sorting::MinIndex(int values[], int start, int end)
 {
     int indexOfMin = start;
     // Iterate through numbers
-    for (int index = start + 1; index <= end; index++) 
+    for (int index = start + 1; index <= end; index++)
     {
         comparisons++;
-        if (values[index] < values[indexOfMin]) // smaller than current minimum, minimumindex is index. 
+        if (values[index] < values[indexOfMin]) // smaller than current minimum, minimumindex is index.
         {
             indexOfMin = index;
         }
@@ -94,7 +95,7 @@ void Sorting::SelectionSort(int values[], int numValues)
 }
 
 // mergesort
-// Author : Anjiya Kazani 
+// Author : Anjiya Kazani
 void Sorting::Merge(int values[], int LeftFirst, int LeftLast, int RightFirst, int RightLast)
 {
     int size = RightLast - LeftFirst + 1;
@@ -132,7 +133,7 @@ void Sorting::MergeSort(int values[], int first, int last)
         Merge(values, first, mid, mid + 1, last); // merge them
     }
 }
-// Author : Hakan Gunerli 
+// Author : Hakan Gunerli
 void Sorting::QuickSort(int values[], int first, int last)
 {
     if (first < last)
@@ -143,27 +144,29 @@ void Sorting::QuickSort(int values[], int first, int last)
         QuickSort(values, splitPoint + 1, last);  // sort the right part
     }
 }
-// Author : Hakan Gunerli 
+// Author : Hakan Gunerli
 void Sorting::HeapSort(int values[], int numValues)
 {
     int index;
     for (index = numValues / 2 - 1; index >= 0; index--) // build heap
         ReheapDown(values, index, numValues - 1);
-    for (index = numValues - 1; index >= 1; index--) // swap root and last element, do a reheap down recursively.
+    for (index = numValues - 1; index >= 1; index--) // Swap root and last element, do a reheap down recursively.
     {
         Swap(values[0], values[index]);
         ReheapDown(values, 0, index - 1);
     }
 }
 // Author : Hakan Gunerli && Anjiya Kazani
-void Sorting::PrintArray(int* values, int numValues) { // print array based on the number of values. 
-    for (int i = 0 ; i < numValues; i++) {
+void Sorting::PrintArray(int *values, int numValues)
+{ // print valuesay based on the number of values.
+    for (int i = 0; i < numValues; i++)
+    {
         cout << values[i] << " ";
     }
-    cout<<endl;
+    cout << endl;
 }
 
-// Author : Hakan Gunerli 
+// Author : Hakan Gunerli
 void Sorting::ReheapDown(int values[], int root, int bottom)
 {
     int maxChild;
@@ -195,7 +198,7 @@ void Sorting::ReheapDown(int values[], int root, int bottom)
                 maxChild = leftChild; // otherwise it's the left.
             }
         }
-        // if the root is smaller than the maxchild, swap and reheap down again.
+        // if the root is smaller than the maxchild, Swap and reheap down again.
         if (values[root] < values[maxChild])
         {
             Swap(values[root], values[maxChild]);
@@ -210,5 +213,52 @@ void Sorting::randomNumberGenerator(int values[], int numValues)
     {
         values[i] = rand() % 1000000; // random values are between 0 and 1000000.
         // assignment doesn't specify what numbers it should be between in.
+    }
+}
+
+// this is Lomuto partitioning scheme.
+
+int Sorting::SplitRandom(int values[], int first, int last)
+{
+
+    int pivot = values[last]; // start with the last element as our pivot point.
+
+    int i = (first - 1); // start from the first element
+
+    for (int j = first; j <= last - 1; j++) // for the entirety of the array 
+    {
+        
+        if (values[j] <= pivot) // if the values we have for j is less than the pivot (aka if the current element is small or equal to the pivot)
+        {
+            comparisons++;
+            i++; // icnrement the element 
+            Swap(values[i], values[j]); // perform swap 
+        }
+    }
+    Swap(values[i + 1], values[last]); // swap the pivot with the last element.
+    return (i + 1); // return the index of the pivot.
+}
+
+int Sorting::partition_random(int values[], int first, int last) // COMPLETELY RANDOMLY GENERATED NUMBER
+{
+
+    srand(time(NULL));                            // randomly generate a number
+    int random = first + rand() % (last - first); // random number between first and last.
+
+    Swap(values[random], values[last]); // swap that with the last element.
+
+    return SplitRandom(values, first, last); // call SplitRandom function.
+}
+
+void Sorting::quickSortRP(int values[], int first, int last)
+{
+    if (first < last) // until we reach the end, make partitions using the pivot point we have obtained through the random partition. 
+    {
+
+        int pivot_point = partition_random(values, first, last);
+
+        quickSortRP(values, first, pivot_point - 1);
+        quickSortRP(values, pivot_point + 1, last);
+
     }
 }
